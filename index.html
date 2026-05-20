@@ -189,58 +189,11 @@ p {
   line-height: 1.65;
 }
 
-.dimension-nav {
-  display: grid;
-  gap: 8px;
-}
-
-.dimension-chip {
-  display: grid;
-  grid-template-columns: 30px minmax(0, 1fr) auto;
-  gap: 8px;
-  align-items: center;
-  min-height: 38px;
-  border: 1px solid #d9e1e8;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #26323f;
-  cursor: pointer;
-  text-align: left;
-}
-
-.dimension-chip span {
-  display: grid;
-  width: 24px;
-  height: 24px;
-  place-items: center;
-  border-radius: 5px;
-  background: #eef3f5;
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.dimension-chip b {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.dimension-chip small {
-  color: #657584;
-  font-weight: 800;
-}
-
-.dimension-chip.is-complete {
-  border-color: #b9d9ce;
-  background: #f3fbf7;
-}
-
 .question-list {
   display: grid;
-  gap: 16px;
+  gap: 10px;
 }
 
-.dimension-block,
 .persona-panel,
 .result-side,
 .focus-panel,
@@ -252,45 +205,6 @@ p {
   background: #ffffff;
 }
 
-.dimension-block {
-  scroll-margin-top: 18px;
-  overflow: hidden;
-}
-
-.dimension-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 16px;
-  align-items: start;
-  padding: 18px;
-  border-bottom: 1px solid #e2e8ef;
-  background: #fbfcfd;
-}
-
-.dimension-code {
-  margin: 0 0 6px;
-  color: #1f4f5b;
-  font-size: 14px;
-  font-weight: 900;
-}
-
-.dimension-heading h2 {
-  margin: 0;
-  color: #26323f;
-  font-size: 17px;
-  line-height: 1.55;
-}
-
-.dimension-heading > span {
-  min-width: 52px;
-  padding: 6px 8px;
-  border: 1px solid #d9e1e8;
-  border-radius: 6px;
-  color: #4d5d6c;
-  font-weight: 900;
-  text-align: center;
-}
-
 .question-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 260px;
@@ -298,12 +212,10 @@ p {
   align-items: center;
   margin: 0;
   padding: 16px 18px;
-  border: 0;
-  border-bottom: 1px solid #e8eef3;
-}
-
-.question-row:last-child {
-  border-bottom: 0;
+  scroll-margin-top: 18px;
+  border: 1px solid #d9e1e8;
+  border-radius: 8px;
+  background: #ffffff;
 }
 
 .question-row legend {
@@ -880,10 +792,6 @@ p {
     position: static;
   }
 
-  .dimension-nav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .question-row {
     grid-template-columns: 1fr;
   }
@@ -915,12 +823,7 @@ p {
     font-size: 40px;
   }
 
-  .dimension-nav {
-    grid-template-columns: 1fr;
-  }
-
   .question-row,
-  .dimension-heading,
   .persona-panel,
   .result-side,
   .focus-panel,
@@ -1006,16 +909,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "秩序設計者",
       "type_name_en": "Strategic Stabilizer",
       "scores": [
-        4.0,
+        4,
         3.5,
         3.5,
-        5.0,
-        5.0,
+        5,
+        5,
         3.5,
-        4.0,
-        5.0,
+        4,
+        5,
         3.5,
-        4.0
+        4
       ],
       "summary_ja": "長期戦、安定運用、継承設計に強い。短期の派手さより、持続する仕組みを作る。",
       "id": "tokugawa-ieyasu",
@@ -1028,16 +931,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "戦略的補佐官",
       "type_name_en": "Strategic Steward",
       "scores": [
-        5.0,
-        4.0,
-        4.0,
-        5.0,
-        5.0,
-        4.0,
-        4.0,
-        5.0,
-        4.0,
-        4.0
+        5,
+        4,
+        4,
+        5,
+        5,
+        4,
+        4,
+        5,
+        4,
+        4
       ],
       "summary_ja": "全体を読み、組織を支えながら着実に前進させる。参謀型の安定感が強い。",
       "id": "zhuge-liang",
@@ -1053,13 +956,13 @@ const STANDALONE_ARCHETYPE_DATA = {
         4.5,
         3.5,
         2.5,
-        5.0,
+        5,
         4.5,
         4.5,
         3.5,
         4.5,
         3.5,
-        4.0
+        4
       ],
       "summary_ja": "地道な観察、記録、検証で信頼できる成果を作る。正確性と継続力に強い。",
       "id": "ino-tadataka",
@@ -1076,12 +979,12 @@ const STANDALONE_ARCHETYPE_DATA = {
         3.5,
         4.5,
         4.5,
-        5.0,
-        4.0,
-        4.0,
+        5,
+        4,
+        4,
         4.5,
-        4.0,
-        4.0
+        4,
+        4
       ],
       "summary_ja": "利害の違う相手を見極め、現実的な均衡点を探す。難しい局面で粘る。",
       "id": "elizabeth-i",
@@ -1094,14 +997,14 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "革新司令官",
       "type_name_en": "Disruptive Commander",
       "scores": [
-        3.0,
-        2.0,
-        5.0,
+        3,
+        2,
+        5,
         4.5,
-        4.0,
-        5.0,
-        3.0,
-        3.0,
+        4,
+        5,
+        3,
+        3,
         2.5,
         3.5
       ],
@@ -1116,16 +1019,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "実証の挑戦者",
       "type_name_en": "Empirical Challenger",
       "scores": [
-        4.0,
+        4,
         2.5,
         4.5,
-        4.0,
+        4,
         4.5,
-        5.0,
-        4.0,
-        4.0,
-        3.0,
-        3.0
+        5,
+        4,
+        4,
+        3,
+        3
       ],
       "summary_ja": "観察と証拠を軸に、前提を疑う。正しさを通す力が強い。",
       "id": "galileo-galilei",
@@ -1138,14 +1041,14 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "境界突破者",
       "type_name_en": "Boundary Breaker",
       "scores": [
-        4.0,
+        4,
         3.5,
-        5.0,
-        4.0,
+        5,
+        4,
         4.5,
         4.5,
-        4.0,
-        4.0,
+        4,
+        4,
         3.5,
         3.5
       ],
@@ -1161,15 +1064,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Visionary Inventor",
       "scores": [
         3.5,
-        3.0,
-        4.0,
-        3.0,
+        3,
+        4,
+        3,
         3.5,
-        5.0,
-        4.0,
+        5,
+        4,
         3.5,
-        3.0,
-        3.0
+        3,
+        3
       ],
       "summary_ja": "直感的な構想と発明的発想に強い。完遂や対人調整はチームで補うとよい。",
       "id": "nikola-tesla",
@@ -1182,13 +1085,13 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "越境仲介者",
       "type_name_en": "Bridge-building Reformer",
       "scores": [
-        4.0,
-        4.0,
+        4,
+        4,
         4.5,
         3.5,
-        4.0,
-        5.0,
-        4.0,
+        4,
+        5,
+        4,
         3.5,
         4.5,
         4.5
@@ -1204,15 +1107,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "実利のネットワーカー",
       "type_name_en": "Pragmatic Networker",
       "scores": [
-        4.0,
-        4.0,
+        4,
+        4,
         4.5,
-        4.0,
-        4.0,
-        5.0,
-        4.0,
-        4.0,
-        4.0,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
         4.5
       ],
       "summary_ja": "好奇心、実利、交渉を組み合わせる。多様な関係者を巻き込むのが得意。",
@@ -1227,13 +1130,13 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Cross-cultural Explorer",
       "scores": [
         3.5,
-        4.0,
+        4,
         3.5,
         3.5,
-        4.0,
-        5.0,
-        4.0,
-        4.0,
+        4,
+        5,
+        4,
+        4,
         4.5,
         3.5
       ],
@@ -1248,15 +1151,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "倫理的事業家",
       "type_name_en": "Ethical Builder",
       "scores": [
-        5.0,
+        5,
         4.5,
-        4.0,
+        4,
         4.5,
-        4.0,
+        4,
         4.5,
         3.5,
-        4.0,
-        4.0,
+        4,
+        4,
         4.5
       ],
       "summary_ja": "公正さと事業推進を両立する。組織づくり、合意形成、長期的信用形成に強い。",
@@ -1270,16 +1173,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "倫理の教師",
       "type_name_en": "Moral Teacher",
       "scores": [
-        5.0,
+        5,
         4.5,
         3.5,
-        4.0,
-        4.0,
-        4.0,
-        4.0,
-        4.0,
-        4.0,
-        4.0
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
       ],
       "summary_ja": "規範、礼節、学びを重視する。人と組織の行動原則を整える。",
       "id": "confucius",
@@ -1292,16 +1195,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "独立自尊の教育者",
       "type_name_en": "Independent Educator",
       "scores": [
-        4.0,
+        4,
         3.5,
-        4.0,
-        4.0,
-        4.0,
-        5.0,
+        4,
+        4,
+        4,
+        5,
         3.5,
-        4.0,
+        4,
         3.5,
-        4.0
+        4
       ],
       "summary_ja": "自律と学習を重視し、知識で社会を前に進める。教育・啓発に向く。",
       "id": "fukuzawa-yukichi",
@@ -1314,16 +1217,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "対話の探究者",
       "type_name_en": "Dialogic Examiner",
       "scores": [
-        4.0,
+        4,
         3.5,
         4.5,
-        3.0,
-        4.0,
-        5.0,
-        5.0,
-        4.0,
-        4.0,
-        4.0
+        3,
+        4,
+        5,
+        5,
+        4,
+        4,
+        4
       ],
       "summary_ja": "問いを通じて本質に迫る。答えを急がず、前提を言語化するのが得意。",
       "id": "socrates",
@@ -1336,16 +1239,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "信念の動員者",
       "type_name_en": "Moral Mobilizer",
       "scores": [
-        5.0,
+        5,
         4.5,
         4.5,
-        4.0,
+        4,
         4.5,
-        4.0,
-        5.0,
-        5.0,
+        4,
+        5,
+        5,
         4.5,
-        4.0
+        4
       ],
       "summary_ja": "価値観と行動の一貫性で周囲を動かす。自己統制とメッセージ性が強い。",
       "id": "mahatma-gandhi",
@@ -1358,16 +1261,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "観察洞察家",
       "type_name_en": "Observant Storyteller",
       "scores": [
-        4.0,
-        4.0,
+        4,
+        4,
         2.5,
-        4.0,
+        4,
         3.5,
-        5.0,
-        5.0,
-        4.0,
-        5.0,
-        3.0
+        5,
+        5,
+        4,
+        5,
+        3
       ],
       "summary_ja": "人の感情や関係性の機微を読む。深い観察と表現で価値を出す。",
       "id": "murasaki-shikibu",
@@ -1380,16 +1283,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "社会観察家",
       "type_name_en": "Social Observer",
       "scores": [
-        4.0,
-        4.0,
+        4,
+        4,
         2.5,
-        4.0,
-        4.0,
-        4.0,
-        5.0,
-        4.0,
-        5.0,
-        3.0
+        4,
+        4,
+        4,
+        5,
+        4,
+        5,
+        3
       ],
       "summary_ja": "人間関係の微妙なズレを読み取り、言語化する。静かな洞察型。",
       "id": "jane-austen",
@@ -1403,15 +1306,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Persistent Creator",
       "scores": [
         3.5,
-        3.0,
-        3.0,
+        3,
+        3,
         4.5,
         4.5,
-        5.0,
-        4.0,
-        4.0,
+        5,
+        4,
+        4,
         3.5,
-        3.0
+        3
       ],
       "summary_ja": "反復と探究で表現を磨く。こだわりと学習量で成果を作る。",
       "id": "katsushika-hokusai",
@@ -1425,14 +1328,14 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Empathic Poet",
       "scores": [
         4.5,
-        5.0,
+        5,
         3.5,
-        3.0,
-        4.0,
+        3,
+        4,
         4.5,
-        5.0,
-        4.0,
-        5.0,
+        5,
+        4,
+        5,
         3.5
       ],
       "summary_ja": "内面や感情を深く扱う。共感的な言葉で人を動かす。",
@@ -1446,13 +1349,13 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "実証的ケア改革者",
       "type_name_en": "Evidence-based Caregiver",
       "scores": [
-        5.0,
-        4.0,
+        5,
+        4,
         4.5,
-        5.0,
+        5,
         4.5,
         4.5,
-        4.0,
+        4,
         4.5,
         4.5,
         4.5
@@ -1468,16 +1371,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "防疫の実証家",
       "type_name_en": "Scientific Defender",
       "scores": [
-        4.0,
+        4,
         3.5,
         4.5,
         4.5,
-        4.0,
-        5.0,
+        4,
+        5,
         3.5,
-        4.0,
+        4,
         3.5,
-        4.0
+        4
       ],
       "summary_ja": "科学的検証で現場を守る。専門性と実装力の両方を持つ。",
       "id": "kitasato-shibasaburo",
@@ -1491,15 +1394,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Integrative Physician",
       "scores": [
         4.5,
-        4.0,
+        4,
         3.5,
         4.5,
-        4.0,
-        5.0,
-        4.0,
-        4.0,
+        4,
+        5,
+        4,
+        4,
         4.5,
-        4.0
+        4
       ],
       "summary_ja": "知識を統合し、人を助ける形に落とし込む。理論と実用の接続に強い。",
       "id": "ibn-sina",
@@ -1512,15 +1415,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "地域再生者",
       "type_name_en": "Community Regenerator",
       "scores": [
-        5.0,
+        5,
         4.5,
         4.5,
-        4.0,
+        4,
         4.5,
         4.5,
         4.5,
         4.5,
-        5.0,
+        5,
         4.5
       ],
       "summary_ja": "人、環境、コミュニティをつなげて改善する。現場参加型の変革に強い。",
@@ -1535,15 +1438,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Focused Researcher",
       "scores": [
         4.5,
-        3.0,
+        3,
         2.5,
-        5.0,
-        5.0,
-        5.0,
-        4.0,
-        5.0,
+        5,
+        5,
+        5,
+        4,
+        5,
         3.5,
-        4.0
+        4
       ],
       "summary_ja": "粘り強く学び、深い専門性で成果を出す。静かな集中と検証志向が強い。",
       "id": "marie-curie",
@@ -1558,14 +1461,14 @@ const STANDALONE_ARCHETYPE_DATA = {
       "scores": [
         4.5,
         3.5,
-        3.0,
-        5.0,
+        3,
+        5,
         4.5,
-        5.0,
-        4.0,
-        4.0,
+        5,
+        4,
+        4,
         3.5,
-        4.0
+        4
       ],
       "summary_ja": "大量の観察を時間をかけて統合する。慎重で検証的な探究に強い。",
       "id": "charles-darwin",
@@ -1580,12 +1483,12 @@ const STANDALONE_ARCHETYPE_DATA = {
       "scores": [
         3.5,
         2.5,
-        3.0,
-        5.0,
-        4.0,
-        5.0,
-        3.0,
-        4.0,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
         2.5,
         2.5
       ],
@@ -1600,15 +1503,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "基礎構造家",
       "type_name_en": "Foundational Logician",
       "scores": [
-        4.0,
-        3.0,
-        3.0,
-        5.0,
+        4,
+        3,
+        3,
+        5,
         4.5,
-        5.0,
+        5,
         3.5,
-        4.0,
-        3.0,
+        4,
+        3,
         3.5
       ],
       "summary_ja": "複雑なものを整理し、再利用できる型にする。構造化に強い。",
@@ -1627,10 +1530,10 @@ const STANDALONE_ARCHETYPE_DATA = {
         3.5,
         2.5,
         3.5,
-        5.0,
+        5,
         4.5,
         3.5,
-        4.0,
+        4,
         3.5
       ],
       "summary_ja": "領域横断の学習と発想が強い。探索・観察・構想で価値を出す。",
@@ -1644,15 +1547,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "想像する分析者",
       "type_name_en": "Imaginative Analyst",
       "scores": [
-        4.0,
-        3.0,
-        3.0,
-        4.0,
-        4.0,
-        5.0,
-        4.0,
-        4.0,
-        3.0,
+        4,
+        3,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        3,
         3.5
       ],
       "summary_ja": "論理と想像力を組み合わせる。未実装の可能性を見通す。",
@@ -1666,16 +1569,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "概念統合者",
       "type_name_en": "Conceptual Synthesizer",
       "scores": [
-        4.0,
-        4.0,
+        4,
+        4,
         3.5,
         3.5,
-        4.0,
-        5.0,
-        4.0,
-        4.0,
-        4.0,
-        4.0
+        4,
+        5,
+        4,
+        4,
+        4,
+        4
       ],
       "summary_ja": "複雑な現象を新しい概念で捉え直す。自由な思考と本質理解に強い。",
       "id": "albert-einstein",
@@ -1692,10 +1595,10 @@ const STANDALONE_ARCHETYPE_DATA = {
         3.5,
         3.5,
         4.5,
-        4.0,
-        5.0,
-        4.0,
-        4.0,
+        4,
+        5,
+        4,
+        4,
         3.5,
         3.5
       ],
@@ -1710,15 +1613,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "原則ある調停者",
       "type_name_en": "Principled Mediator",
       "scores": [
-        5.0,
+        5,
         4.5,
-        4.0,
-        4.0,
-        5.0,
-        4.0,
-        5.0,
+        4,
+        4,
+        5,
+        4,
+        5,
         4.5,
-        5.0,
+        5,
         4.5
       ],
       "summary_ja": "原則、共感、粘り強い対話で難局を進める。葛藤のある組織で橋渡し役になる。",
@@ -1732,15 +1635,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "和解のリーダー",
       "type_name_en": "Reconciliatory Leader",
       "scores": [
-        5.0,
+        5,
         4.5,
         4.5,
-        4.0,
-        5.0,
-        4.0,
-        5.0,
-        5.0,
-        5.0,
+        4,
+        5,
+        4,
+        5,
+        5,
+        5,
         4.5
       ],
       "summary_ja": "困難な状況でも尊厳と和解を重視する。対立後の信頼形成に強い。",
@@ -1754,15 +1657,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "人権の擁護者",
       "type_name_en": "Humanitarian Advocate",
       "scores": [
-        5.0,
-        5.0,
+        5,
+        5,
         4.5,
-        4.0,
+        4,
         4.5,
-        4.0,
+        4,
         4.5,
-        4.0,
-        5.0,
+        4,
+        5,
         4.5
       ],
       "summary_ja": "弱い立場の人の声を拾い、制度や対話へつなげる。支援と発信の両方に強い。",
@@ -1776,15 +1679,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "静かな触媒",
       "type_name_en": "Quiet Catalyst",
       "scores": [
-        5.0,
-        4.0,
-        4.0,
+        5,
+        4,
+        4,
         3.5,
-        5.0,
+        5,
         3.5,
         4.5,
-        5.0,
-        4.0,
+        5,
+        4,
         3.5
       ],
       "summary_ja": "静かな一貫性で状況を変える。強い信念を、落ち着いた行動で示す。",
@@ -1800,14 +1703,14 @@ const STANDALONE_ARCHETYPE_DATA = {
       "scores": [
         4.5,
         4.5,
-        5.0,
-        4.0,
-        5.0,
-        5.0,
-        5.0,
-        5.0,
-        5.0,
-        4.0
+        5,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        4
       ],
       "summary_ja": "困難を言葉と行動に変える。相手に届く表現と粘り強さがある。",
       "id": "helen-keller",
@@ -1820,16 +1723,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "保護する先導者",
       "type_name_en": "Protective Guide",
       "scores": [
-        5.0,
+        5,
         4.5,
         4.5,
-        4.0,
-        5.0,
-        4.0,
+        4,
+        5,
+        4,
         4.5,
-        5.0,
-        5.0,
-        4.0
+        5,
+        5,
+        4
       ],
       "summary_ja": "危険な状況でも人を守り、導く。勇気と責任感が強い。",
       "id": "harriet-tubman",
@@ -1843,14 +1746,14 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Devoted Caregiver",
       "scores": [
         4.5,
-        5.0,
+        5,
         3.5,
-        4.0,
-        4.0,
+        4,
+        4,
         3.5,
         4.5,
-        4.0,
-        5.0,
+        4,
+        5,
         3.5
       ],
       "summary_ja": "目の前の困っている人への支援を重視する。現場での献身性が高い。",
@@ -1864,15 +1767,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "内省の調和者",
       "type_name_en": "Reflective Harmonizer",
       "scores": [
-        5.0,
-        5.0,
+        5,
+        5,
         2.5,
         3.5,
-        5.0,
+        5,
         4.5,
-        5.0,
-        5.0,
-        5.0,
+        5,
+        5,
+        5,
         3.5
       ],
       "summary_ja": "内省と慈悲を重視する。衝突を静め、視点を変える働きに向く。",
@@ -1887,15 +1790,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Decisive Operator",
       "scores": [
         2.5,
-        2.0,
-        5.0,
-        5.0,
+        2,
+        5,
+        5,
         4.5,
         4.5,
-        3.0,
-        3.0,
+        3,
+        3,
         2.5,
-        3.0
+        3
       ],
       "summary_ja": "決断と遂行が突出する。短期成果に強いが、関係調整や納得形成を補う必要がある。",
       "id": "napoleon-bonaparte",
@@ -1908,16 +1811,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "機会掌握者",
       "type_name_en": "Resourceful Promoter",
       "scores": [
-        3.0,
+        3,
         3.5,
-        5.0,
+        5,
         4.5,
-        4.0,
+        4,
         4.5,
         3.5,
         3.5,
-        4.0,
-        4.0
+        4,
+        4
       ],
       "summary_ja": "機会をつかみ、人と資源を動かして成果に変える。勢いと実務感覚がある。",
       "id": "toyotomi-hideyoshi",
@@ -1931,15 +1834,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Visionary Catalyst",
       "scores": [
         4.5,
-        3.0,
-        5.0,
+        3,
+        5,
         3.5,
-        5.0,
-        3.0,
-        5.0,
-        4.0,
+        5,
+        3,
+        5,
+        4,
         3.5,
-        3.0
+        3
       ],
       "summary_ja": "信念を前面に出して人を動かす。迷いのある場面で方向を示す。",
       "id": "joan-of-arc",
@@ -1952,15 +1855,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "転換する統治者",
       "type_name_en": "Transformative Ruler",
       "scores": [
-        4.0,
-        4.0,
+        4,
+        4,
         4.5,
         4.5,
-        4.0,
-        4.0,
+        4,
+        4,
         4.5,
-        4.0,
-        4.0,
+        4,
+        4,
         3.5
       ],
       "summary_ja": "強い遂行力を持ちつつ、途中で価値観を転換する。経験から方向修正するタイプ。",
@@ -1974,16 +1877,16 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "体系的学者",
       "type_name_en": "Systematic Scholar",
       "scores": [
-        4.0,
-        3.0,
+        4,
+        3,
         3.5,
-        5.0,
-        4.0,
-        5.0,
-        4.0,
-        4.0,
+        5,
+        4,
+        5,
+        4,
+        4,
         3.5,
-        3.0
+        3
       ],
       "summary_ja": "物事を分類し、体系化する。複雑な知識を整理して扱うのが得意。",
       "id": "aristotle",
@@ -1996,15 +1899,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "社会構造の観察者",
       "type_name_en": "Pattern Theorist",
       "scores": [
-        4.0,
+        4,
         3.5,
         3.5,
         4.5,
         4.5,
-        5.0,
-        4.0,
-        4.0,
-        4.0,
+        5,
+        4,
+        4,
+        4,
         3.5
       ],
       "summary_ja": "社会や組織のパターンを読み解く。長期的な構造理解に強い。",
@@ -2018,15 +1921,15 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_ja": "状況戦略家",
       "type_name_en": "Strategic Analyst",
       "scores": [
-        3.0,
-        3.0,
-        4.0,
-        5.0,
-        5.0,
-        4.0,
-        4.0,
-        5.0,
-        3.0,
+        3,
+        3,
+        4,
+        5,
+        5,
+        4,
+        4,
+        5,
+        3,
         3.5
       ],
       "summary_ja": "状況を読み、勝ち筋を設計する。感情より構造とタイミングを見る。",
@@ -2041,14 +1944,14 @@ const STANDALONE_ARCHETYPE_DATA = {
       "type_name_en": "Aesthetic Disciplinarian",
       "scores": [
         4.5,
-        4.0,
+        4,
         3.5,
         4.5,
-        5.0,
-        4.0,
+        5,
+        4,
         4.5,
-        5.0,
-        4.0,
+        5,
+        4,
         3.5
       ],
       "summary_ja": "余分を削ぎ落とし、本質に集中する。美意識と規律で場を整える。",
@@ -2057,381 +1960,6 @@ const STANDALONE_ARCHETYPE_DATA = {
     }
   ]
 };
-const dimensions = [
-  {
-    code: "A",
-    key: "integrity",
-    label: "誠実・公正さ",
-    short: "誠実",
-    description: "約束、公正さ、判断基準の一貫性をどの程度重視しやすいか。",
-  },
-  {
-    code: "B",
-    key: "care",
-    label: "協働配慮",
-    short: "配慮",
-    description: "相手の事情やチーム全体の働きやすさをどの程度考慮しやすいか。",
-  },
-  {
-    code: "C",
-    key: "voice",
-    label: "自己主張・発言性",
-    short: "発言",
-    description: "意見、提案、違和感をどの程度言語化して場に出しやすいか。",
-  },
-  {
-    code: "D",
-    key: "plan",
-    label: "遂行・計画性",
-    short: "計画",
-    description: "段取り、優先順位、締切、完遂にどの程度意識を向けやすいか。",
-  },
-  {
-    code: "E",
-    key: "calm",
-    label: "情緒安定・ストレス耐性",
-    short: "安定",
-    description: "負荷や不確実性がある状況で、落ち着いて判断しやすいか。",
-  },
-  {
-    code: "F",
-    key: "learning",
-    label: "学習・変化受容",
-    short: "学習",
-    description: "新しい方法、異なる考え方、未知のテーマを学びに変えやすいか。",
-  },
-  {
-    code: "G",
-    key: "selfAware",
-    label: "感情自己認識",
-    short: "認識",
-    description: "自分の感情変化や反応の理由をどの程度言葉にしやすいか。",
-  },
-  {
-    code: "H",
-    key: "regulate",
-    label: "感情調整・衝動統制",
-    short: "調整",
-    description: "感情が動いた場面で、反応を整えて建設的に行動しやすいか。",
-  },
-  {
-    code: "I",
-    key: "empathy",
-    label: "他者理解・共感",
-    short: "共感",
-    description: "相手の立場、背景、感情、言外の意図を理解しようとしやすいか。",
-  },
-  {
-    code: "J",
-    key: "feedback",
-    label: "フィードバック活用・期待整合",
-    short: "FB",
-    description: "期待値を確認し、助言や指摘を次の行動に反映しやすいか。",
-  },
-];
-
-const questions = [
-  {
-    "id": "A1",
-    "dimension": "A",
-    "reverse": false,
-    "text": "私は、相手を動かすために本心と違うことを言うのをできるだけ避ける。"
-  },
-  {
-    "id": "A2",
-    "dimension": "A",
-    "reverse": false,
-    "text": "自分に都合がよくても、ルールの抜け道を使うことには抵抗がある。"
-  },
-  {
-    "id": "A3",
-    "dimension": "A",
-    "reverse": false,
-    "text": "職場での評価や肩書より、約束を守ることを重視する。"
-  },
-  {
-    "id": "A4",
-    "dimension": "A",
-    "reverse": true,
-    "text": "利益のためなら、多少ごまかしてもよいと思う。"
-  },
-  {
-    "id": "A5",
-    "dimension": "A",
-    "reverse": false,
-    "text": "自分だけ特別扱いされるべきだと感じることは少ない。"
-  },
-  {
-    "id": "B1",
-    "dimension": "B",
-    "reverse": false,
-    "text": "意見が違っても、相手の立場を傷つけない言い方を選ぶ。"
-  },
-  {
-    "id": "B2",
-    "dimension": "B",
-    "reverse": false,
-    "text": "仕事で摩擦が起きても、関係を修復する方向で動こうとする。"
-  },
-  {
-    "id": "B3",
-    "dimension": "B",
-    "reverse": true,
-    "text": "相手の短所をすぐ指摘するほうだ。"
-  },
-  {
-    "id": "B4",
-    "dimension": "B",
-    "reverse": false,
-    "text": "忙しい時でも、周囲への礼節を保とうとする。"
-  },
-  {
-    "id": "B5",
-    "dimension": "B",
-    "reverse": false,
-    "text": "自分の案に固執しすぎず、必要なら折り合いをつけられる。"
-  },
-  {
-    "id": "C1",
-    "dimension": "C",
-    "reverse": false,
-    "text": "会議で必要だと思えば、先に口火を切ることができる。"
-  },
-  {
-    "id": "C2",
-    "dimension": "C",
-    "reverse": false,
-    "text": "役割が曖昧なときは、自分から確認や提案をする。"
-  },
-  {
-    "id": "C3",
-    "dimension": "C",
-    "reverse": true,
-    "text": "人前で自分の考えを述べるのはかなり苦手だ。"
-  },
-  {
-    "id": "C4",
-    "dimension": "C",
-    "reverse": false,
-    "text": "立場が上の相手にも、敬意を保ちつつ異論を伝えられる。"
-  },
-  {
-    "id": "C5",
-    "dimension": "C",
-    "reverse": false,
-    "text": "周囲が迷っているとき、次の一歩を言語化して場を前に進められる。"
-  },
-  {
-    "id": "D1",
-    "dimension": "D",
-    "reverse": false,
-    "text": "締切から逆算して仕事を進めることが多い。"
-  },
-  {
-    "id": "D2",
-    "dimension": "D",
-    "reverse": true,
-    "text": "細部の確認を後回しにしてしまうことが多い。"
-  },
-  {
-    "id": "D3",
-    "dimension": "D",
-    "reverse": false,
-    "text": "一度引き受けた仕事は、最後までやり切ろうとする。"
-  },
-  {
-    "id": "D4",
-    "dimension": "D",
-    "reverse": true,
-    "text": "作業の優先順位を、その場の気分で変えがちだ。"
-  },
-  {
-    "id": "D5",
-    "dimension": "D",
-    "reverse": false,
-    "text": "必要な情報や資料を整理してから着手する。"
-  },
-  {
-    "id": "E1",
-    "dimension": "E",
-    "reverse": false,
-    "text": "想定外の出来事が起きても、比較的落ち着いて対処できる。"
-  },
-  {
-    "id": "E2",
-    "dimension": "E",
-    "reverse": true,
-    "text": "小さなミスを長く引きずりやすい。"
-  },
-  {
-    "id": "E3",
-    "dimension": "E",
-    "reverse": false,
-    "text": "プレッシャーが高い場面でも、考えをまとめ直せる。"
-  },
-  {
-    "id": "E4",
-    "dimension": "E",
-    "reverse": true,
-    "text": "緊張すると、相手の言葉を必要以上に悪く受け取りやすい。"
-  },
-  {
-    "id": "E5",
-    "dimension": "E",
-    "reverse": false,
-    "text": "難しい状況でも、感情より事実を見て判断しようとする。"
-  },
-  {
-    "id": "F1",
-    "dimension": "F",
-    "reverse": false,
-    "text": "これまでのやり方より良い方法があれば試してみたい。"
-  },
-  {
-    "id": "F2",
-    "dimension": "F",
-    "reverse": false,
-    "text": "自分と異なる発想に触れると、まず理解しようとする。"
-  },
-  {
-    "id": "F3",
-    "dimension": "F",
-    "reverse": true,
-    "text": "新しいやり方より、慣れたやり方だけを守りたい。"
-  },
-  {
-    "id": "F4",
-    "dimension": "F",
-    "reverse": false,
-    "text": "抽象的なアイデアを、仕事の改善に結びつけて考えるのが好きだ。"
-  },
-  {
-    "id": "F5",
-    "dimension": "F",
-    "reverse": false,
-    "text": "未知のテーマでも、必要なら自分で学びに行ける。"
-  },
-  {
-    "id": "G1",
-    "dimension": "G",
-    "reverse": false,
-    "text": "いま自分が何に反応して感情が動いたかを、比較的言葉にできる。"
-  },
-  {
-    "id": "G2",
-    "dimension": "G",
-    "reverse": true,
-    "text": "気分の変化に、後から気づくことが多い。"
-  },
-  {
-    "id": "G3",
-    "dimension": "G",
-    "reverse": false,
-    "text": "感情が判断に影響しているとき、それを自覚しやすい。"
-  },
-  {
-    "id": "G4",
-    "dimension": "G",
-    "reverse": false,
-    "text": "苛立ちや不安の背景にある本当の理由を考える習慣がある。"
-  },
-  {
-    "id": "G5",
-    "dimension": "G",
-    "reverse": true,
-    "text": "自分の感情状態を説明するのは難しい。"
-  },
-  {
-    "id": "H1",
-    "dimension": "H",
-    "reverse": false,
-    "text": "感情が高ぶっても、すぐに反応せず少し間を取れる。"
-  },
-  {
-    "id": "H2",
-    "dimension": "H",
-    "reverse": true,
-    "text": "いら立つと、言わなくてよい一言を言ってしまう。"
-  },
-  {
-    "id": "H3",
-    "dimension": "H",
-    "reverse": false,
-    "text": "判断に迷うときほど、事実確認をしてから動く。"
-  },
-  {
-    "id": "H4",
-    "dimension": "H",
-    "reverse": false,
-    "text": "気分が乱れても、仕事上必要な行動は維持できる。"
-  },
-  {
-    "id": "H5",
-    "dimension": "H",
-    "reverse": true,
-    "text": "感情の勢いで結論を急ぎがちだ。"
-  },
-  {
-    "id": "I1",
-    "dimension": "I",
-    "reverse": false,
-    "text": "相手の表情や話し方から、気持ちの変化に気づきやすい。"
-  },
-  {
-    "id": "I2",
-    "dimension": "I",
-    "reverse": false,
-    "text": "相手がなぜその反応をしたのか、背景を想像してみる。"
-  },
-  {
-    "id": "I3",
-    "dimension": "I",
-    "reverse": true,
-    "text": "相手の立場より、自分の正しさを優先してしまうことが多い。"
-  },
-  {
-    "id": "I4",
-    "dimension": "I",
-    "reverse": false,
-    "text": "直接言葉にされなくても、相手が困っていそうだと分かることがある。"
-  },
-  {
-    "id": "I5",
-    "dimension": "I",
-    "reverse": false,
-    "text": "意見が合わない相手でも、その人なりの事情を考えられる。"
-  },
-  {
-    "id": "J1",
-    "dimension": "J",
-    "reverse": false,
-    "text": "自分の仕事ぶりについて、必要なときは周囲に率直なフィードバックを求める。"
-  },
-  {
-    "id": "J2",
-    "dimension": "J",
-    "reverse": true,
-    "text": "指摘を受けると、防御的になってしまうことが多い。"
-  },
-  {
-    "id": "J3",
-    "dimension": "J",
-    "reverse": false,
-    "text": "自分に期待されている成果や優先順位を、曖昧なままにしない。"
-  },
-  {
-    "id": "J4",
-    "dimension": "J",
-    "reverse": false,
-    "text": "仕事が滞りそうなときは、早めに共有して相談する。"
-  },
-  {
-    "id": "J5",
-    "dimension": "J",
-    "reverse": false,
-    "text": "フィードバックは、次の行動を決める材料として使いたい。"
-  }
-];
 
 const selfAnalysisOrder = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 
@@ -2878,6 +2406,7 @@ const selfAnalysisTemplates = {
   },
 };
 
+
 function getScoreBand(score) {
   const n = Number(score);
   if (!Number.isFinite(n)) return 'middle';
@@ -2998,9 +2527,389 @@ function buildReflectionChecklist(scores) {
   }));
 }
 
+
+const dimensions = [
+  {
+    code: "A",
+    key: "integrity",
+    label: "誠実・公正さ",
+    short: "誠実",
+    description: "約束、公正さ、判断基準の一貫性をどの程度重視しやすいか。",
+  },
+  {
+    code: "B",
+    key: "care",
+    label: "協働配慮",
+    short: "配慮",
+    description: "相手の事情やチーム全体の働きやすさをどの程度考慮しやすいか。",
+  },
+  {
+    code: "C",
+    key: "voice",
+    label: "自己主張・発言性",
+    short: "発言",
+    description: "意見、提案、違和感をどの程度言語化して場に出しやすいか。",
+  },
+  {
+    code: "D",
+    key: "plan",
+    label: "遂行・計画性",
+    short: "計画",
+    description: "段取り、優先順位、締切、完遂にどの程度意識を向けやすいか。",
+  },
+  {
+    code: "E",
+    key: "calm",
+    label: "情緒安定・ストレス耐性",
+    short: "安定",
+    description: "負荷や不確実性がある状況で、落ち着いて判断しやすいか。",
+  },
+  {
+    code: "F",
+    key: "learning",
+    label: "学習・変化受容",
+    short: "学習",
+    description: "新しい方法、異なる考え方、未知のテーマを学びに変えやすいか。",
+  },
+  {
+    code: "G",
+    key: "selfAware",
+    label: "感情自己認識",
+    short: "認識",
+    description: "自分の感情変化や反応の理由をどの程度言葉にしやすいか。",
+  },
+  {
+    code: "H",
+    key: "regulate",
+    label: "感情調整・衝動統制",
+    short: "調整",
+    description: "感情が動いた場面で、反応を整えて建設的に行動しやすいか。",
+  },
+  {
+    code: "I",
+    key: "empathy",
+    label: "他者理解・共感",
+    short: "共感",
+    description: "相手の立場、背景、感情、言外の意図を理解しようとしやすいか。",
+  },
+  {
+    code: "J",
+    key: "feedback",
+    label: "フィードバック活用・期待整合",
+    short: "FB",
+    description: "期待値を確認し、助言や指摘を次の行動に反映しやすいか。",
+  },
+];
+
+
+const questions = [
+  {
+    "id": "A1",
+    "dimension": "A",
+    "reverse": false,
+    "text": "私は、相手を動かすために本心と違うことを言うのをできるだけ避ける。"
+  },
+  {
+    "id": "A2",
+    "dimension": "A",
+    "reverse": false,
+    "text": "自分に都合がよくても、ルールの抜け道を使うことには抵抗がある。"
+  },
+  {
+    "id": "A3",
+    "dimension": "A",
+    "reverse": false,
+    "text": "職場での評価や肩書より、約束を守ることを重視する。"
+  },
+  {
+    "id": "A4",
+    "dimension": "A",
+    "reverse": true,
+    "text": "利益のためなら、多少ごまかしてもよいと思う。"
+  },
+  {
+    "id": "A5",
+    "dimension": "A",
+    "reverse": false,
+    "text": "自分だけ特別扱いされるべきだと感じることは少ない。"
+  },
+  {
+    "id": "B1",
+    "dimension": "B",
+    "reverse": false,
+    "text": "意見が違っても、相手の立場を傷つけない言い方を選ぶ。"
+  },
+  {
+    "id": "B2",
+    "dimension": "B",
+    "reverse": false,
+    "text": "仕事で摩擦が起きても、関係を修復する方向で動こうとする。"
+  },
+  {
+    "id": "B3",
+    "dimension": "B",
+    "reverse": true,
+    "text": "相手の短所をすぐ指摘するほうだ。"
+  },
+  {
+    "id": "B4",
+    "dimension": "B",
+    "reverse": false,
+    "text": "忙しい時でも、周囲への礼節を保とうとする。"
+  },
+  {
+    "id": "B5",
+    "dimension": "B",
+    "reverse": false,
+    "text": "自分の案に固執しすぎず、必要なら折り合いをつけられる。"
+  },
+  {
+    "id": "C1",
+    "dimension": "C",
+    "reverse": false,
+    "text": "会議で必要だと思えば、先に口火を切ることができる。"
+  },
+  {
+    "id": "C2",
+    "dimension": "C",
+    "reverse": false,
+    "text": "役割が曖昧なときは、自分から確認や提案をする。"
+  },
+  {
+    "id": "C3",
+    "dimension": "C",
+    "reverse": true,
+    "text": "人前で自分の考えを述べるのはかなり苦手だ。"
+  },
+  {
+    "id": "C4",
+    "dimension": "C",
+    "reverse": false,
+    "text": "立場が上の相手にも、敬意を保ちつつ異論を伝えられる。"
+  },
+  {
+    "id": "C5",
+    "dimension": "C",
+    "reverse": false,
+    "text": "周囲が迷っているとき、次の一歩を言語化して場を前に進められる。"
+  },
+  {
+    "id": "D1",
+    "dimension": "D",
+    "reverse": false,
+    "text": "締切から逆算して仕事を進めることが多い。"
+  },
+  {
+    "id": "D2",
+    "dimension": "D",
+    "reverse": true,
+    "text": "細部の確認を後回しにしてしまうことが多い。"
+  },
+  {
+    "id": "D3",
+    "dimension": "D",
+    "reverse": false,
+    "text": "一度引き受けた仕事は、最後までやり切ろうとする。"
+  },
+  {
+    "id": "D4",
+    "dimension": "D",
+    "reverse": true,
+    "text": "作業の優先順位を、その場の気分で変えがちだ。"
+  },
+  {
+    "id": "D5",
+    "dimension": "D",
+    "reverse": false,
+    "text": "必要な情報や資料を整理してから着手する。"
+  },
+  {
+    "id": "E1",
+    "dimension": "E",
+    "reverse": false,
+    "text": "想定外の出来事が起きても、比較的落ち着いて対処できる。"
+  },
+  {
+    "id": "E2",
+    "dimension": "E",
+    "reverse": true,
+    "text": "小さなミスを長く引きずりやすい。"
+  },
+  {
+    "id": "E3",
+    "dimension": "E",
+    "reverse": false,
+    "text": "プレッシャーが高い場面でも、考えをまとめ直せる。"
+  },
+  {
+    "id": "E4",
+    "dimension": "E",
+    "reverse": true,
+    "text": "緊張すると、相手の言葉を必要以上に悪く受け取りやすい。"
+  },
+  {
+    "id": "E5",
+    "dimension": "E",
+    "reverse": false,
+    "text": "難しい状況でも、感情より事実を見て判断しようとする。"
+  },
+  {
+    "id": "F1",
+    "dimension": "F",
+    "reverse": false,
+    "text": "これまでのやり方より良い方法があれば試してみたい。"
+  },
+  {
+    "id": "F2",
+    "dimension": "F",
+    "reverse": false,
+    "text": "自分と異なる発想に触れると、まず理解しようとする。"
+  },
+  {
+    "id": "F3",
+    "dimension": "F",
+    "reverse": true,
+    "text": "新しいやり方より、慣れたやり方だけを守りたい。"
+  },
+  {
+    "id": "F4",
+    "dimension": "F",
+    "reverse": false,
+    "text": "抽象的なアイデアを、仕事の改善に結びつけて考えるのが好きだ。"
+  },
+  {
+    "id": "F5",
+    "dimension": "F",
+    "reverse": false,
+    "text": "未知のテーマでも、必要なら自分で学びに行ける。"
+  },
+  {
+    "id": "G1",
+    "dimension": "G",
+    "reverse": false,
+    "text": "いま自分が何に反応して感情が動いたかを、比較的言葉にできる。"
+  },
+  {
+    "id": "G2",
+    "dimension": "G",
+    "reverse": true,
+    "text": "気分の変化に、後から気づくことが多い。"
+  },
+  {
+    "id": "G3",
+    "dimension": "G",
+    "reverse": false,
+    "text": "感情が判断に影響しているとき、それを自覚しやすい。"
+  },
+  {
+    "id": "G4",
+    "dimension": "G",
+    "reverse": false,
+    "text": "苛立ちや不安の背景にある本当の理由を考える習慣がある。"
+  },
+  {
+    "id": "G5",
+    "dimension": "G",
+    "reverse": true,
+    "text": "自分の感情状態を説明するのは難しい。"
+  },
+  {
+    "id": "H1",
+    "dimension": "H",
+    "reverse": false,
+    "text": "感情が高ぶっても、すぐに反応せず少し間を取れる。"
+  },
+  {
+    "id": "H2",
+    "dimension": "H",
+    "reverse": true,
+    "text": "いら立つと、言わなくてよい一言を言ってしまう。"
+  },
+  {
+    "id": "H3",
+    "dimension": "H",
+    "reverse": false,
+    "text": "判断に迷うときほど、事実確認をしてから動く。"
+  },
+  {
+    "id": "H4",
+    "dimension": "H",
+    "reverse": false,
+    "text": "気分が乱れても、仕事上必要な行動は維持できる。"
+  },
+  {
+    "id": "H5",
+    "dimension": "H",
+    "reverse": true,
+    "text": "感情の勢いで結論を急ぎがちだ。"
+  },
+  {
+    "id": "I1",
+    "dimension": "I",
+    "reverse": false,
+    "text": "相手の表情や話し方から、気持ちの変化に気づきやすい。"
+  },
+  {
+    "id": "I2",
+    "dimension": "I",
+    "reverse": false,
+    "text": "相手がなぜその反応をしたのか、背景を想像してみる。"
+  },
+  {
+    "id": "I3",
+    "dimension": "I",
+    "reverse": true,
+    "text": "相手の立場より、自分の正しさを優先してしまうことが多い。"
+  },
+  {
+    "id": "I4",
+    "dimension": "I",
+    "reverse": false,
+    "text": "直接言葉にされなくても、相手が困っていそうだと分かることがある。"
+  },
+  {
+    "id": "I5",
+    "dimension": "I",
+    "reverse": false,
+    "text": "意見が合わない相手でも、その人なりの事情を考えられる。"
+  },
+  {
+    "id": "J1",
+    "dimension": "J",
+    "reverse": false,
+    "text": "自分の仕事ぶりについて、必要なときは周囲に率直なフィードバックを求める。"
+  },
+  {
+    "id": "J2",
+    "dimension": "J",
+    "reverse": true,
+    "text": "指摘を受けると、防御的になってしまうことが多い。"
+  },
+  {
+    "id": "J3",
+    "dimension": "J",
+    "reverse": false,
+    "text": "自分に期待されている成果や優先順位を、曖昧なままにしない。"
+  },
+  {
+    "id": "J4",
+    "dimension": "J",
+    "reverse": false,
+    "text": "仕事が滞りそうなときは、早めに共有して相談する。"
+  },
+  {
+    "id": "J5",
+    "dimension": "J",
+    "reverse": false,
+    "text": "フィードバックは、次の行動を決める材料として使いたい。"
+  }
+];
+
+
 const STORAGE_KEY = "history-persona-self-analysis-answers-v2";
 const imageExtensions = ["webp", "jpg", "jpeg", "png"];
 const root = document.getElementById("app");
+const questionFlow = buildQuestionFlow();
 
 const archetypeData = STANDALONE_ARCHETYPE_DATA;
 const archetypes = archetypeData.archetypes || [];
@@ -3077,10 +2986,12 @@ root.addEventListener("click", async (event) => {
     return;
   }
 
-  if (actionName === "scroll-to") {
-    document.getElementById(`dimension-${action.dataset.id}`)?.scrollIntoView({
+  if (actionName === "scroll-to-next-unanswered") {
+    const next = questionFlow.find((question) => !Number.isFinite(Number(state.answers[question.id])));
+    const target = next || questionFlow[0];
+    document.getElementById(`question-${target.id}`)?.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
     });
   }
 });
@@ -3101,7 +3012,7 @@ root.addEventListener(
     }
 
     image.removeAttribute("data-archetype-id");
-    image.src = "/images/archetypes/_placeholder.svg";
+    image.src = PLACEHOLDER_SRC;
   },
   true
 );
@@ -3174,11 +3085,19 @@ function isComplete(answers) {
   return questions.every((question) => Number.isFinite(Number(answers[question.id])));
 }
 
-function groupedQuestions() {
-  return dimensions.map((dimension) => ({
-    ...dimension,
-    questions: questions.filter((question) => question.dimension === dimension.code),
-  }));
+function buildQuestionFlow() {
+  const mixedDimensionOrder = ["A", "F", "B", "G", "C", "H", "D", "I", "E", "J"];
+  const byId = new Map(questions.map((question) => [question.id, question]));
+  const mixed = [];
+
+  for (let round = 1; round <= 5; round += 1) {
+    for (const dimension of mixedDimensionOrder) {
+      const question = byId.get(`${dimension}${round}`);
+      if (question) mixed.push(question);
+    }
+  }
+
+  return mixed.length === questions.length ? mixed : questions;
 }
 
 function analysisContext() {
@@ -3226,7 +3145,6 @@ function renderToast() {
 
 function renderQuestions(context) {
   const percent = Math.round((context.completedCount / questions.length) * 100);
-  const groups = groupedQuestions();
 
   return `
     <header class="app-header">
@@ -3251,58 +3169,26 @@ function renderQuestions(context) {
           <i style="width: ${percent}%"></i>
         </div>
         <p class="progress-text">最近の自分に近い選択肢を選んでください。1は「あてはまらない」、5は「あてはまる」です。</p>
-        <div class="dimension-nav">
-          ${groups.map((group) => renderDimensionNavItem(group)).join("")}
-        </div>
+        <button class="button secondary full" type="button" data-action="scroll-to-next-unanswered">未回答へ</button>
         <button class="button primary full" type="button" data-action="show-results" ${context.complete ? "" : "disabled"}>
           自己分析レポートを見る
         </button>
       </aside>
 
       <section class="question-list" aria-label="自己分析質問">
-        ${groups.map((group) => renderQuestionGroup(group)).join("")}
+        ${questionFlow.map((question, index) => renderQuestion(question, index)).join("")}
       </section>
     </section>
   `;
 }
 
-function renderDimensionNavItem(group) {
-  const completed = group.questions.filter((question) => Number.isFinite(Number(state.answers[question.id]))).length;
-  const done = completed === group.questions.length;
-
-  return `
-    <button class="dimension-chip ${done ? "is-complete" : ""}" type="button" data-action="scroll-to" data-id="${group.code}">
-      <span>${group.code}</span>
-      <b>${escapeHtml(group.short)}</b>
-      <small>${completed}/${group.questions.length}</small>
-    </button>
-  `;
-}
-
-function renderQuestionGroup(group) {
-  const completed = group.questions.filter((question) => Number.isFinite(Number(state.answers[question.id]))).length;
-
-  return `
-    <section class="dimension-block" id="dimension-${group.code}">
-      <div class="dimension-heading">
-        <div>
-          <p class="dimension-code">${group.code}. ${escapeHtml(group.label)}</p>
-          <h2>${escapeHtml(group.description)}</h2>
-        </div>
-        <span>${completed}/${group.questions.length}</span>
-      </div>
-      ${group.questions.map((question) => renderQuestion(question)).join("")}
-    </section>
-  `;
-}
-
-function renderQuestion(question) {
+function renderQuestion(question, index) {
   const selected = Number(state.answers[question.id]);
 
   return `
-    <fieldset class="question-row">
+    <fieldset class="question-row" id="question-${escapeAttribute(question.id)}">
       <legend>
-        <span>${escapeHtml(question.id)}</span>
+        <span>Q${index + 1}</span>
         ${escapeHtml(question.text)}
       </legend>
       <div class="scale" role="radiogroup" aria-label="${escapeAttribute(question.text)}">
