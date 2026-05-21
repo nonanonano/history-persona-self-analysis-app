@@ -851,6 +851,74 @@ p {
   }
 }
 
+@media print {
+  :root,
+  body {
+    background: #ffffff;
+  }
+
+  .app-shell {
+    width: 100%;
+    padding: 0;
+  }
+
+  .app-header,
+  .persona-panel,
+  .result-side,
+  .focus-panel,
+  .workbook-panel,
+  .detail-panel,
+  .summary-panel,
+  .rank-card,
+  .note-panel,
+  .radar-panel,
+  .focus-card,
+  .workbook-step,
+  .detail-card,
+  .info-section {
+    border-color: #ccd3da;
+    box-shadow: none;
+  }
+
+  .header-actions,
+  .toast,
+  .note-panel button {
+    display: none !important;
+  }
+
+  .result-layout,
+  .persona-head,
+  .focus-grid,
+  .workbook-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-panel,
+  .question-list {
+    display: none;
+  }
+
+  .persona-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .summary-panel pre {
+    max-height: none;
+    background: #ffffff;
+    color: #17202a;
+  }
+
+  .detail-card,
+  .focus-card,
+  .workbook-step,
+  .summary-panel,
+  .detail-panel {
+    break-inside: avoid;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2977,6 +3045,16 @@ root.addEventListener("click", async (event) => {
     return;
   }
 
+  if (actionName === "print-report") {
+    window.print();
+    return;
+  }
+
+  if (actionName === "email-report") {
+    openEmailDraft();
+    return;
+  }
+
   if (actionName === "toggle-detail") {
     const id = action.dataset.id;
     const open = action.getAttribute("aria-expanded") === "true";
@@ -3225,6 +3303,8 @@ function renderResults(context) {
         <p class="header-copy">${escapeHtml(title)} / ${escapeHtml(typeName)}。人物名は診断ラベルではなく、最近の行動パターンを読むための比喩です。</p>
       </div>
       <div class="header-actions">
+        <button class="button primary" type="button" data-action="print-report">PDF保存</button>
+        <button class="button secondary" type="button" data-action="email-report">メール送信</button>
         <button class="button secondary" type="button" data-action="show-questions">回答を見直す</button>
         <button class="button ghost" type="button" data-action="reset">最初から</button>
       </div>
@@ -3534,6 +3614,29 @@ async function copySummary() {
     state.toast = "";
     render();
   }, 2200);
+}
+
+function openEmailDraft() {
+  const context = analysisContext();
+  if (!context.complete || !context.top) return;
+
+  const subject = `自己分析レポート: ${context.top.figure_ja}型`;
+  const body = buildEmailBody(context);
+  const mailto = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+}
+
+function buildEmailBody(context) {
+  const focus = getFocusThemes(context.dimensionScores, 3);
+  const scoreLines = context.dimensionScores
+    .map((score) => `${score.code}. ${score.label}: ${score.score.toFixed(1)}`)
+    .join("\n");
+  const focusLines = focus
+    .map((item) => `- ${item.name}（${item.bandLabel}）: ${item.reflectionQuestions?.[0] || item.coreQuestion}`)
+    .join("\n");
+  const pageUrl = location.origin === "null" ? "" : `\n\nページURL:\n${location.href}`;
+
+  return `自己分析レポート\n\nあなたは${context.top.figure_ja}に似ています\n${context.top.figure_ja}型 / ${context.top.type_name_ja}\n\n${context.top.summary_ja}\n\n10指標スコア:\n${scoreLines}\n\nまず深掘りする3テーマ:\n${focusLines}\n\n注: 歴史人物名は自己理解のための比喩です。能力や人格を断定するものではありません。${pageUrl}`;
 }
 
 function escapeHtml(value) {
